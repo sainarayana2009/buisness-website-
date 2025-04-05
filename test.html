@@ -6,14 +6,19 @@
   <title>Investor Outreach</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: 'Arial', sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      font-family: 'Arial', sans-serif;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: white;
-      overflow-x: hidden;
       transition: background 0.5s ease, color 0.5s ease;
     }
 
@@ -28,18 +33,13 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      animation: fadeIn 1s ease-in;
       text-align: center;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      padding: 20px;
     }
 
     .logo {
       font-family: 'Orbitron', sans-serif;
-      font-size: 50px;
+      font-size: 2.5rem;
       margin-bottom: 20px;
       background: linear-gradient(45deg, #00c6ff, #0072ff);
       -webkit-background-clip: text;
@@ -54,17 +54,17 @@
 
     input[type="text"] {
       padding: 15px;
-      font-size: 18px;
+      font-size: 1rem;
       border: none;
       border-radius: 10px;
       margin-bottom: 15px;
-      width: 80%;
+      width: 90%;
       max-width: 300px;
     }
 
     button {
       padding: 15px 25px;
-      font-size: 18px;
+      font-size: 1rem;
       background-color: #ff9800;
       border: none;
       border-radius: 10px;
@@ -78,7 +78,7 @@
     }
 
     .toggle-mode {
-      position: absolute;
+      position: fixed;
       top: 20px;
       right: 20px;
       padding: 10px 15px;
@@ -88,14 +88,7 @@
       border-radius: 10px;
       cursor: pointer;
       color: inherit;
-    }
-
-    .details, .popup {
-      animation: fadeIn 0.8s ease-in;
-    }
-
-    .hidden {
-      display: none;
+      z-index: 1000;
     }
 
     .details {
@@ -105,12 +98,12 @@
       border-radius: 15px;
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
       max-width: 700px;
-      text-align: center;
+      width: 100%;
     }
 
     .idea-box {
       background: rgba(255, 255, 255, 0.8);
-      padding: 30px;
+      padding: 20px;
       margin: 15px auto;
       border-radius: 15px;
       width: 90%;
@@ -123,7 +116,7 @@
 
     .idea-box:hover {
       background-color: rgba(255, 255, 255, 1);
-      transform: scale(1.05);
+      transform: scale(1.03);
       box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
     }
 
@@ -135,51 +128,56 @@
       transform: translate(-50%, -50%);
       background: white;
       color: black;
-      padding: 30px;
+      padding: 20px;
       border-radius: 15px;
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+      width: 90%;
       max-width: 500px;
-      text-align: center;
+      max-height: 80vh;
+      overflow-y: auto;
+      text-align: left;
       z-index: 999;
     }
 
     .popup button {
       background-color: red;
+      margin-top: 20px;
+    }
+
+    .hidden {
+      display: none;
     }
 
     @media (max-width: 768px) {
+      .logo {
+        font-size: 2rem;
+      }
+
+      button, input[type="text"] {
+        font-size: 0.95rem;
+      }
+
       .idea-box {
+        font-size: 0.95rem;
+      }
+
+      .details {
         padding: 20px;
-        font-size: 16px;
-        width: 85%;
-      }
-
-      input[type="text"] {
-        font-size: 16px;
-        width: 90%;
-      }
-
-      button {
-        font-size: 16px;
-        padding: 12px 20px;
       }
     }
 
     @media (max-width: 480px) {
+      .logo {
+        font-size: 1.7rem;
+      }
+
+      button, input[type="text"] {
+        font-size: 0.9rem;
+        padding: 12px 18px;
+      }
+
       .idea-box {
-        padding: 15px;
-        font-size: 14px;
-        width: 80%;
-      }
-
-      input[type="text"] {
-        font-size: 14px;
-        width: 85%;
-      }
-
-      button {
-        font-size: 14px;
-        padding: 10px 18px;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -213,36 +211,20 @@
 
   <!-- Popups -->
   <div class="popup" id="idea1">
-    <h2>RC Gaming Experience: A Thrilling Community for RC Car Enthusiasts</h2>
-    <p>Our platform provides an exciting opportunity for people who love RC car racing to interact, race, and compete with others in a virtual environment. The RC gaming experience is more than just playing; it’s about connecting with fellow enthusiasts and showcasing your skills in thrilling tournaments.
-
-        We understand that many RC car fans, like myself, watch exciting content on YouTube and dream of being part of the action. With this business, we're offering an experience that brings that excitement to life, allowing everyone—from beginners to experts—to engage in dynamic racing experiences.
-        
-        By hosting tournaments and providing a space for passionate racers, we believe this venture will not only attract a large community but also create a new, engaging way to experience RC car racing—making it accessible for everyone. Additionally, we offer the convenience of pre-booking races through our website, ensuring that participants can easily secure their spot and plan ahead for upcoming events.
-        
-        If you’re interested in this exciting venture or would like to learn more, feel free to contact us via email.</p>
+    <h2>RC Gaming Experience</h2>
+    <p>Our platform provides an exciting opportunity for people who love RC car racing to interact, race, and compete with others in a virtual environment...</p>
     <button onclick="closePopup('idea1')">Close</button>
   </div>
 
   <div class="popup" id="idea2">
-    <h2>RC Racing Drones & Educational Workshops: Fly, Race, and Learn</h2>
-    <p>Expanding beyond ground-level RC racing, our platform will also feature RC racing drones—bringing the thrill of high-speed aerial competitions to our users. These drones add a whole new dimension to the RC experience, offering fast-paced action, obstacle challenges, and FPV (First Person View) flying for maximum excitement.
-
-        To support this, we will offer interactive drone racing workshops where users can learn how to fly, control, and race drones effectively. Our training sessions will include both theory and hands-on practice, making them perfect for beginners, students, and even hobbyists who want to master drone technology.
-        
-        By combining entertainment with education, we aim to build a strong community around drone racing while also empowering users with real-world tech skills. This opens opportunities for school collaborations, STEM-focused events, and tech fairs—making our platform more than just fun, but also future-focused.</p>
+    <h2>RC Racing Drones & Workshops</h2>
+    <p>Expanding beyond ground-level RC racing, our platform will also feature RC racing drones—bringing the thrill of high-speed aerial competitions to our users...</p>
     <button onclick="closePopup('idea2')">Close</button>
   </div>
 
   <div class="popup" id="idea4">
-    <h2>Virtual Reality Learning Spaces: Revolutionizing the Way We Learn</h2>
-    <p>As part of our innovation-driven vision, we plan to introduce Virtual Reality (VR) Learning Spaces—an immersive way for users to learn, practice, and improve their RC car racing skills in a realistic and engaging environment.
-
-        These VR spaces will simulate real-world tracks and racing conditions, allowing users to train, explore strategies, and experience the thrill of racing from a first-person perspective. This feature will also include educational modules for beginners, tutorials, and hands-on experiences that boost learning through interactivity.
-        
-        With VR technology transforming industries worldwide, integrating it into our RC gaming platform opens the door to endless possibilities—making learning fun, impactful, and future-ready.
-        
-        .</p>
+    <h2>Virtual Reality Learning Spaces</h2>
+    <p>We plan to introduce Virtual Reality (VR) Learning Spaces—an immersive way for users to learn, practice, and improve their RC car racing skills in a realistic and engaging environment...</p>
     <button onclick="closePopup('idea4')">Close</button>
   </div>
 
